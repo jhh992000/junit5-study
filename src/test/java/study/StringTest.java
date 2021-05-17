@@ -1,21 +1,15 @@
 package study;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-import static org.assertj.core.api.Assertions.assertThatNullPointerException;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+
+import static org.assertj.core.api.Assertions.*;
 
 @DisplayName("String 테스트")
-@TestMethodOrder(MethodOrderer.DisplayName.class)
 public class StringTest {
 
 	@Test
-	@DisplayName("요구사항 1-1 : 구분자가 있을 경우 split 테스트")
+	@DisplayName("요구사항 1 : 구분자가 있을 경우 split 테스트")
 	void splitContains() {
 		String str = "1,2";
 		String[] result = str.split(",");
@@ -24,7 +18,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 1-2 : 구분자가 없을 경우 split 테스트")
+	@DisplayName("요구사항 1 : 구분자가 없을 경우 split 테스트")
 	void splitContainsExactly() {
 		String str = "1";
 		String[] result = str.split(",");
@@ -33,7 +27,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 2-1 : () 문자열 제거후 split 테스트")
+	@DisplayName("요구사항 2 : () 문자열 제거후 split 테스트")
 	void splitAfterRemoveBracket() {
 		String str = "(1,2)";
 		if (str.contains("(")) {
@@ -48,7 +42,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 3-1 : charAt 테스트")
+	@DisplayName("요구사항 3 : charAt 테스트")
 	void charAt() {
 		String str = "abc";
 		char searchChar = str.charAt(0);
@@ -57,7 +51,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 3-2 : charAt 예외발생 테스트1")
+	@DisplayName("요구사항 3 : charAt 예외발생 테스트1")
 	void charAtException1() {
 		String str = "abc";
 
@@ -71,7 +65,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 3-2 : charAt 예외발생 테스트2")
+	@DisplayName("요구사항 3 : charAt 예외발생 테스트2")
 	void charAtException2() {
 		String str = "abc";
 
@@ -85,7 +79,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 3-2 : nullPointer 예외발생 테스트")
+	@DisplayName("요구사항 3 : nullPointer 예외발생 테스트")
 	void nullPointerException() {
 		String str = null;
 
