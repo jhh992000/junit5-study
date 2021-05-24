@@ -27,7 +27,7 @@ public class SetTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 1 : set 크기 테스트")
+	@DisplayName("set 크기 테스트")
 	void sizeCheck() {
 		int size = this.numbers.size();
 		assertThat(size).isEqualTo(3);
@@ -35,14 +35,14 @@ public class SetTest {
 
 	@ParameterizedTest
 	@ValueSource(ints = {1, 2, 3})
-	@DisplayName("요구사항 2 : set 값 테스트")
+	@DisplayName("set 값 테스트")
 	void contains(Integer number) {
 		assertThat(numbers.contains(number)).isTrue();
 	}
 
 	@ParameterizedTest
 	@CsvSource(value = {"1:true", "2:true", "3:true", "4:false", "5:false"}, delimiter = ':')
-	@DisplayName("요구사항 2 : set 값 테스트 (입력값에 따른 결과값을 체크)")
+	@DisplayName("set 값 테스트 (입력값에 따른 결과값을 체크)")
 	void containsGroup(Integer number, Boolean expected) {
 		boolean isContain = numbers.contains(number);
 		assertThat(isContain).isEqualTo(expected);

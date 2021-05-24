@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.*;
 public class StringTest {
 
 	@Test
-	@DisplayName("요구사항 1 : 구분자가 있을 경우 split 테스트")
+	@DisplayName("구분자가 있을 경우 split 테스트")
 	void splitContains() {
 		String str = "1,2";
 		String[] result = str.split(",");
@@ -18,7 +18,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 1 : 구분자가 없을 경우 split 테스트")
+	@DisplayName("구분자가 없을 경우 split 테스트")
 	void splitContainsExactly() {
 		String str = "1";
 		String[] result = str.split(",");
@@ -27,7 +27,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 2 : () 문자열 제거후 split 테스트")
+	@DisplayName("문자열에서 괄호문자 () 제거후 split 테스트")
 	void splitAfterRemoveBracket() {
 		String str = "(1,2)";
 		if (str.contains("(")) {
@@ -42,7 +42,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 3 : charAt 테스트")
+	@DisplayName("charAt 테스트")
 	void charAt() {
 		String str = "abc";
 		char searchChar = str.charAt(0);
@@ -51,7 +51,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 3 : charAt 예외발생 테스트1")
+	@DisplayName("charAt 예외발생 테스트1")
 	void charAtException1() {
 		String str = "abc";
 
@@ -65,7 +65,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 3 : charAt 예외발생 테스트2")
+	@DisplayName("charAt 예외발생 테스트2")
 	void charAtException2() {
 		String str = "abc";
 
@@ -79,7 +79,7 @@ public class StringTest {
 	}
 
 	@Test
-	@DisplayName("요구사항 3 : nullPointer 예외발생 테스트")
+	@DisplayName("nullPointer 예외발생 테스트")
 	void nullPointerException() {
 		String str = null;
 
@@ -90,4 +90,5 @@ public class StringTest {
 
 		}).withNoCause();
 	}
+
 }
